@@ -12,8 +12,9 @@ const getAllTasks = async (req, res) => {
 };
 
 const deleteTaskById = async (req, res) => {
-  const response = await todoService.deleteTaskById();
-  res.status(200).json(response)
+  const { id } = req.params;
+  const response = await todoService.deleteTaskById(id);
+  res.status(200).json(response);
 };
 
 const updateTask = async (req, res) => {

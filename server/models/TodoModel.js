@@ -16,7 +16,9 @@ const getAllTasks = async () => {
 };
 
 const deleteTaskById = async (_id) => {
-  return;
+  const db = await connection();
+  const response = await db.collection(COLLECTION_NAME).deleteOne({ _id: ObjectId(_id) });
+  return response;
 };
 
 const updateTask = async (_id, name, status) => {
