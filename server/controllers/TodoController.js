@@ -18,8 +18,10 @@ const deleteTaskById = async (req, res) => {
 };
 
 const updateTask = async (req, res) => {
-  const response = await todoService.updateTask();
-  res.status(200).json(response)
+  const { id } = req.params;
+  const { name, status } = req.body;
+  const response = await todoService.updateTask(id, name, status);
+  return res.status(200).json(response);
 };
 
 module.exports = {

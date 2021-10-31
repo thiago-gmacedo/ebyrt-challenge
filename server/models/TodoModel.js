@@ -22,7 +22,10 @@ const deleteTaskById = async (_id) => {
 };
 
 const updateTask = async (_id, name, status) => {
-  return;
+  const db = await connection();
+  const response = await db.collection(COLLECTION_NAME).
+  updateOne({ _id: ObjectId(_id) }, { $set: { name, status } });
+  return { _id, name, status };
 };
 
 module.exports = {
