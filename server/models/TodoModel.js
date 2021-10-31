@@ -10,7 +10,9 @@ const addNewTask = async (task) => {
 };
 
 const getAllTasks = async () => {
-  return;
+  const db = await connection();
+  const response = await db.collection(COLLECTION_NAME).find({}).toArray();
+  return response;
 };
 
 const deleteTaskById = async (_id) => {
