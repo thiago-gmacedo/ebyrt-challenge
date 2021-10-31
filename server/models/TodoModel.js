@@ -4,7 +4,9 @@ const connection = require('./connection');
 const COLLECTION_NAME = 'taskList';
 
 const addNewTask = async (task) => {
-  return;
+  const db = await connection();
+  const response = await db.collection(COLLECTION_NAME).insertOne(task);
+  return { _id: response.InsertedId, ...task };
 };
 
 const getAllTasks = async () => {
