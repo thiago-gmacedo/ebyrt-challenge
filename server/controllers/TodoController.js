@@ -2,7 +2,10 @@ const todoService = require('../services/TodoService');
 
 const addNewTask = async (req, res) => {
   const { name, status } = req.body;
-  const response = await todoService.addNewTask({ name, status });
+  
+  const momentDate = new Date();
+
+  const response = await todoService.addNewTask({ name, status, momentDate });
   res.status(201).json(response);
 };
 
