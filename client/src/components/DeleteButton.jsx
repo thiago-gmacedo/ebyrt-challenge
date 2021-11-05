@@ -1,9 +1,9 @@
-import deleteTask from "../server-methods/DeleteTask";
+import DeleteTask from "../server-methods/DeleteTask";
 
 const DeleteButton = (props) => {
   const { id, fetchTasks } = props;
   return (
-    <button onClick={ () => deleteTask(id, fetchTasks) }>Apagar</button>
+    <button onClick={ () => DeleteTask(id, fetchTasks) }>Apagar</button>
   );
 };
 

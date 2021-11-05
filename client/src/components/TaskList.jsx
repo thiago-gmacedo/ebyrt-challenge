@@ -16,7 +16,7 @@ const taskList = (props) => {
             return (
                 <tr key={`${_id}`}>
                   <td>{ name }</td>
-                  <td><TaskStatus status={ status } /></td>
+                  <td><TaskStatus id={ _id }name={ name } status={ status } fetchTasks={ fetchTasks } /></td>
                   <td>{ formatedDate }</td>
                   <td><DeleteButton id={ _id } fetchTasks={ fetchTasks } /></td>
                 </tr>
