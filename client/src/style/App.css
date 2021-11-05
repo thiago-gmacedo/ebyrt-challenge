@@ -1,0 +1,16 @@
+* {
+  font-size: 30px;
+  margin: 25px;
+  background-color: rgb(226, 193, 102);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+table, td, tr {
+  width: 1500px;
+}

@@ -1,0 +1,11 @@
+.new-task-camp {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+input, button {
+  border-radius: 7%;
+  background-color: brown;
+  color: aliceblue;
+}
