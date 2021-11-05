@@ -12,10 +12,10 @@ const TaskStatus = (props) => {
 
   const sumStatus = (status) => {
     const statusNewValue = status === 2 ? 0 : status + 1;
-    UpdateTask(name, statusNewValue, fetchTasks, id)
+    UpdateTask(name, statusNewValue, fetchTasks, id);
   }
 
-  return <p onClick={ () => sumStatus(status) }>{statusDict[status]};</p>
+  return <p onClick={ () => sumStatus(status) }>{statusDict[status]}</p>
 };
 
 export default TaskStatus;

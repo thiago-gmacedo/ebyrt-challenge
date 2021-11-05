@@ -1,5 +1,5 @@
 import NewTaskButton from './NewTaskButton';
-import '../style/NewTask.css'
+import '../style/NewTask.css';
 
 const NewTask = (props) => {
   const { name, setName, fetchTasks } = props;
@@ -12,7 +12,7 @@ const NewTask = (props) => {
       />
       <NewTaskButton name={ name } fetchTasks={ fetchTasks }  />
     </div>
-  )
+  );
 };
 
 export default NewTask;

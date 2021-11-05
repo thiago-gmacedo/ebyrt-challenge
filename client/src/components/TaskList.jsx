@@ -4,7 +4,7 @@ import TaskStatus from "./TaskStatus.jsx";
 const taskList = (props) => {
   const { tasks, fetchTasks } = props;
   return (
-    <table class="bordered striped centered">
+      <table class="bordered striped centered">
         <tr>
           <td>Nome</td>
           <td>status</td>
@@ -12,7 +12,7 @@ const taskList = (props) => {
         </tr>
 
         {tasks.map(({ name, status, momentDate, _id }, index) => {
-          const formatedDate = new Date(momentDate).toLocaleString()
+          const formatedDate = new Date(momentDate).toLocaleString();
             return (
                 <tr key={`${_id}`}>
                   <td>{ name }</td>
@@ -21,9 +21,9 @@ const taskList = (props) => {
                   <td><DeleteButton id={ _id } fetchTasks={ fetchTasks } /></td>
                 </tr>
             );
-        })}
+        })};
       </table>
   );
-}
+};
 
 export default taskList;

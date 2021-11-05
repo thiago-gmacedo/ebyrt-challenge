@@ -12,7 +12,7 @@ const Home = () => {
     axios
       .get('http://localhost:3000/tarefas')
       .then(res => setTasks(res.data));
-  }
+  };
     
   React.useEffect(() => {
     fetchTasks();
