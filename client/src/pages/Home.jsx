@@ -1,9 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 import TaskList from '../components/TaskList';
+import NewTask from '../components/NewTask';
 
 const Home = () => {
   const [tasks, setTasks] = React.useState([]);
+  const [name, setName] = React.useState('');
 
   const fetchTasks = () => {
     axios
@@ -20,6 +22,7 @@ const Home = () => {
     <>
       <h1>Tarefatron 2006</h1>
       <TaskList tasks={ tasks } fetchTasks={ fetchTasks }/>
+      <NewTask name={ name } setName={ setName } fetchTasks={ fetchTasks}/>
     </>
     );
 };
