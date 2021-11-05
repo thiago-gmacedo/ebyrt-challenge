@@ -1,10 +1,10 @@
 import DeleteButton from "./DeleteButton";
-import TaskStatus from "./TaskStatus";
+import TaskStatus from "./TaskStatus.jsx";
 
 const taskList = (props) => {
   const { tasks, fetchTasks } = props;
   return (
-      <table className="task-list">
+    <table class="bordered striped centered">
         <tr>
           <td>Nome</td>
           <td>status</td>

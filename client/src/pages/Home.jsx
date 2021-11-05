@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import TaskList from '../components/TaskList';
 import NewTask from '../components/NewTask';
+import '../style/Home.css'
 
 const Home = () => {
   const [tasks, setTasks] = React.useState([]);
