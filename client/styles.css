@@ -1,0 +1,15 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply text-white rounded-md p-3 font-bold;
+  }
+
+  .task-card {
+    @apply w-auto h-16 bg-yellow-500 hover:bg-yellow-700 border-2 mx-1 mt-2
+  }
+}
