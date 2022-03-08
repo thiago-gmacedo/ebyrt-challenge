@@ -4,25 +4,19 @@ import TaskStatus from "./TaskStatus.jsx";
 const taskList = (props) => {
   const { tasks, fetchTasks } = props;
   return (
-      <table class="bordered striped centered">
-        <tr>
-          <td>Nome</td>
-          <td>status</td>
-          <td>Criacao</td>
-        </tr>
-
+      <div className="border-2 w-screen ">
         {tasks.map(({ name, status, momentDate, _id }, index) => {
           const formatedDate = new Date(momentDate).toLocaleString();
             return (
-                <tr key={`${_id}`}>
-                  <td>{ name }</td>
-                  <td><TaskStatus id={ _id }name={ name } status={ status } fetchTasks={ fetchTasks } /></td>
-                  <td>{ formatedDate }</td>
-                  <td><DeleteButton id={ _id } fetchTasks={ fetchTasks } /></td>
-                </tr>
+                <div className="border-2 flex justify-around place-items-center" key={`${_id}`}>
+                  <div>{ name ? name : 'TESTE' }</div>
+                  <div><TaskStatus id={ _id }name={ name } status={ status } fetchTasks={ fetchTasks } /></div>
+                  <div>{ formatedDate }</div>
+                  <div><DeleteButton id={ _id } fetchTasks={ fetchTasks } /></div>
+                </div>
             );
-        })};
-      </table>
+        })}
+      </div>
   );
 };
 

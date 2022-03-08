@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import TaskList from '../components/TaskList';
 import NewTask from '../components/NewTask';
-import '../style/Home.css'
+import '../style/styles.css'
 
 const Home = () => {
   const [tasks, setTasks] = React.useState([]);
@@ -10,7 +10,7 @@ const Home = () => {
 
   const fetchTasks = () => {
     axios
-      .get('http://localhost:3000/tarefas')
+      .get('http://localhost:3001/tarefas')
       .then(res => setTasks(res.data));
   };
     
@@ -20,11 +20,13 @@ const Home = () => {
   
   if (!tasks) return <div>Carregando...</div>;
   return (
-    <>
-      <h1>Tarefatron 2006</h1>
-      <TaskList tasks={ tasks } fetchTasks={ fetchTasks }/>
-      <NewTask name={ name } setName={ setName } fetchTasks={ fetchTasks}/>
-    </>
+    <body className='h-screen bg-yellow-100'>
+      <div className='mx-auto p-3'>
+        <h1 className='text-center'>Tarefatron 2006</h1>
+        <TaskList tasks={ tasks } fetchTasks={ fetchTasks }/>
+        <NewTask name={ name } setName={ setName } fetchTasks={ fetchTasks}/>
+      </div>
+    </body>
     );
 };
 
